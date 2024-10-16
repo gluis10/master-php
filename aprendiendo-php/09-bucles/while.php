@@ -8,7 +8,7 @@ echo '<h1>Estructuras de control Iteradores y Bucles</h1>';
 echo "<hr>";
 echo '<h2>Bucle While</h2>';
 //------------------------------------------------------------------------------
-//Ejemplo#1 Muestre un numero de 1 al 100
+//Ejemplo#1 Muestre los numeros de 1 al 100
 $numero = 0;
 
 while($numero <= 100) {
@@ -25,10 +25,18 @@ while($numero <= 100) {
  *  en 1 para que el bucle se siga ejecutando hasta que $numero valga 100.
  * Cuando $numero llega a 100 la variable aumenta en 101 y ya no se ejecuta porque al entrar en la condición, ya no se cumple.
  */ 
+
+//------------------------------------------------------------------------------
 echo "<br><br>";
 echo "<hr>";
 
-/* Eje#2. Comprobar que nos llega un parámetro número por GET
+/* Eje#2. Con el IF vamos a comprobar que nos llega un parámetro número por GET
+ * a travez de la URL.
+ * Evaluamos si nos llega un parámetro número y lo guardamos en la variable $numero
+ * En caso de que no llegue, (else), $numero va valer 1.
+ * El isset() comprueba si existe una variable
+ * Cuando recibimos un valor en la url es un siempre es un String
+ * El int castea la variable, o sea cambiarle el tipo de dato
  */ 
 
 if(isset($_GET['numero'])){
@@ -38,18 +46,17 @@ if(isset($_GET['numero'])){
 }
 var_dump($numero);
 
-//Mostrar la tabla de multiplicar del numero obtenido de la url anteriormente
-echo "<h1>Tabla de multiplicar $numero</h1>";
+//Mostrar la tabla de multiplicar de un número o del parámetro que vamos obtener por GET (url)
+echo "<h2>Tabla de multiplicar $numero</h2>";
+
 
 $contador = 1;
 while($contador <= 10){
     echo "$numero x $contador = ".($numero*$contador)."</br>";
     $contador++;
 }
-
-/* Mientras que el contador sea meno o igual a 10 va a iterar
- */ 
-
+// Mientras que el contador sea menor o igual a 10 va a iterar
+ 
 
 //--------------------------------------------------------------------------------------------------------------------------------
 echo "<br><br><br><br><br><br><br><br>";
